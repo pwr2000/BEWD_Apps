@@ -1,0 +1,14 @@
+<div class='container'>
+	<p>You won or lost. We don't know it yet</P>
+
+	<p>The user chose <%= @chosen_number %></p>
+	<p>The secret number is <%= @secret_number %></p>
+
+	<% if @chosen_number == @secret_number %>
+	<h1>You won! Congratulations</h1>
+	<img src="<%= image_path("games/cat-wins.jpeg") %>">
+	<% else %>
+	<h1>You lost! Sorry</h1>
+	<img src="<%= image_path("games/loser.gif") %>">
+	<% end %>
+</div>

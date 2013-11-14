@@ -1,0 +1,50 @@
+<div class='container'>
+
+<div class='span2'>
+	<a href="<%= rock_paper_scissors_path %>">Let's play again</a>
+</div>
+
+<div class='span8'>
+	<% if @user_pick == @computer_pick %>
+		<h1>It's a Tie</h1>
+		<img src="<%= image_path("games/tie.jpg") %>">
+
+	<% elsif @user_pick == 1 && @computer_pick == 3 %>
+		<img src="<%= image_path("rock_paper_scissors/rock.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/scissors.jpeg") %>">
+	<h1>You win</h1>
+		<img src="<%= image_path("games/winner.gif") %>">
+
+	<% elsif @user_pick == 1 && @computer_pick == 2 %>
+		<img src="<%= image_path("rock_paper_scissors/rock.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/paper.jpeg") %>">
+	<h1>You lose</h1>
+		<img src="<%= image_path("games/cat-always-wins.jpeg") %>">
+	
+	<% elsif @user_pick == 2 && @computer_pick == 1 %>
+		<img src="<%= image_path("rock_paper_scissors/paper.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/rock.jpeg") %>">
+	<h1>You win</h1>
+		<img src="<%= image_path("games/winner.gif") %>">
+
+	<% elsif @user_pick == 2 && @computer_pick == 3 %>
+		<img src="<%= image_path("rock_paper_scissors/paper.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/scissors.jpeg") %>">
+	<h1>You lose</h1>
+		<img src="<%= image_path("games/cat-always-wins.jpeg") %>">
+	
+	<% elsif @user_pick == 3 && @computer_pick == 1 %>
+		<img src="<%= image_path("rock_paper_scissors/scissors.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/rock.jpeg") %>">
+	<h1>You lose</h1>
+		<img src="<%= image_path("games/cat-always-wins.jpeg") %>">
+	
+	<% elsif @user_pick == 3 && @computer_pick == 2 %>
+		<img src="<%= image_path("rock_paper_scissors/scissors.jpeg") %>">
+		<img src="<%= image_path("rock_paper_scissors/paper.jpeg") %>">
+	<h1>You win</h1>
+		<img src="<%= image_path("games/winner.gif") %>">
+
+	<% end %>
+</div>
+</div>

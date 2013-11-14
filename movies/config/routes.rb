@@ -1,14 +1,5 @@
-Games::Application.routes.draw do
-  root 'games#index'
-
-  resources :games
-
-  get 'about' => 'games#about'
-  get 'how_it_works' => 'games#how_it_works'
-
-  resources :secret_numbers
-
-  resources :rock_paper_scissors
+Movies::Application.routes.draw do
+  root 'movies#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -50,7 +41,7 @@ Games::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
