@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Shirts::Application.config.secret_key_base = '3acc84b08e92cda76e21d18b64d5a793ecc1b527791598888a89708d1eaa0590f3814b8382a85233d914ab26b0e7cb2c8f91389e5128364f78e1f910f731aba5'
+Shirts::Application.config.secret_key_base = '9a8a86c45e6fc904424beecead5de0177743a8f66a1162472da2968eca25300f66c55efd57734b35a200bf333609d90670f28c9452a13ac91c7b9da192f9b1f3'
