@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Movies::Application.config.secret_key_base = 'e9e51039a648ff04ae41b01d4fdb12d88863d81d3e9f58fec980c47ee61bc69645dc813d889a9638a3011abbeb80ba7c8771e35363e7bfb35288f259d4a62f26'
+Movies::Application.config.secret_key_base = 'dfbbdcab0b4ee572b823548a02d1cd16a372bfff700194a5423cd2e5195f429f06a1ff6b1b0c2666b64397a37bd4b8f30b6168bed9ab86cf5ae01950a4eb06ab'

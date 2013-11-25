@@ -1,9 +1,18 @@
 <a href = "%= root_path %"><h1>All the shirts!</h1></a>
 
+<a href="<%= new_shirt_path %>">+ Add new shirt</a>
+<br>
+<br>
+
+<%= form_tag "/", :method => :get do %>
+	<%= text_field_tag :q, params[:q] %>
+	<%= submit_tag "Find Me Shirts" %>
+<% end %>
+
 <ul>
 	<% @shirts.each do |shirt| %>
 	<li>
-		<h2><%= shirt.name %></h2>
+		<h2><a href="<%= shirt_path(shirt) %>"><%= shirt.name %></a></h2>
 	</li>
 		<p><%= shirt.description %></p>
 		<img src="<%= image_path(shirt.image) %>">

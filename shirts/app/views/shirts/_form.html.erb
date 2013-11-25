@@ -1,0 +1,19 @@
+<%= form_for @shirt, :html => { :class => "form_class"} do |f| %>
+	<div>
+	<%= f.label :name, "Name of shirt", :class => "label_class" %><br>
+	<%= f.text_field :name, :class => "text_field" %>
+	</div>
+
+	<div>
+	<%= f.label :description, "Description" %><br>
+	<%= f.text_field :description %>
+	</div>
+
+	<div>
+	<%= f.label :image, "Image" %><br>
+	<%= f.text_field :image %>
+	</div>
+
+	<%= f.submit "Create forms" %>
+
+<% end %>
