@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @movie.title %></h1>
+<br>
+<h4><%= @movie.description %></h4>
+<h4><%= @movie.year_released %></h4>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Year released:</strong>
-  <%= @movie.year_released %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<p><a href="<%= edit_movie_path ( @movie ) %>">Edit Movie</a></p>
+<br>
+<%= button_to "Delete Movie", movie_path(@movie), :method => :delete %> 

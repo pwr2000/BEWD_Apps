@@ -5,8 +5,38 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <div class="hero-unit">
+  	<h1>Welcome to Redflix</h1>
+  	<p>Home of Thousands of Streaming Movies</p>
+  </div>
 </head>
+
 <body>
+<div class="container">
+
+	<div class="navbar">
+	<div class="navbar-inner">
+	<a class="brand" href="<%= root_path %>">Home</a>
+	<ul class="nav">
+	        <li 
+                <% if params[:controller] == "movies" and params[:action] == "about" %> 
+                class="active"
+                <% end %>
+	        >
+                <a href="<%= root_path %>">Movie Selection</a>
+	        </li>
+	        <li
+                <% if params[:controller] == "movies" and params[:action] == "how_it_works" %> 
+                class="active"
+                <% end %>
+	        >
+                <a href="<%= new_movie_path %>">Add New Movie</a>
+	        </li>
+	</ul>
+	</div>                
+</div>
+
 
 <%= yield %>
 
