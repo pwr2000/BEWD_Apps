@@ -1,0 +1,27 @@
+<%= form_tag "/", :method => :get do %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Find me story" %>
+<% end %>
+<br> 
+
+<p><a href="<%= new_rewsly_path %>">+Add New Story</a></p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Upvotes</th>
+			<th>Category</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @rewlies.each do |rewsly| %>
+			<tr>
+			<td><a href="<%= rewsly_path(rewsly) %>"><%= rewsly.title %></a></td>
+			<td><%= rewsly.upvotes %></td>
+			<td><%= rewsly.category %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
