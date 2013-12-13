@@ -1,0 +1,42 @@
+<% if @classified.errors.any? %>
+<h2>There were errors saving your Classifieds!</h2>
+<ul>
+        <% @classified.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+</ul>
+<% end %>
+
+<%= form_for @classified do |f| %>
+
+        <div class="field">
+                <%= label_tag :category %><br>
+                <%= text_field_tag :category, "", :data => {:provide => "typeahead", :source => @categories, :autocomplete => "off" } %>
+        </div>
+
+
+        <div class="field">
+                <%= f.label :title %><br>
+                <%= f.text_field :title %>
+        </div>
+
+        <div class="field">
+                <%= f.label :description %><br>
+                <%= f.text_area :description %>
+        </div>
+
+        <div class="field">
+                <%= f.label :price %><br>
+                <%= f.number_field :price %>
+        </div>
+
+        <div class="field">
+                <%= f.label :image %><br>
+                <%= f.file_field :image %>
+        </div>
+
+        <div class="actions">
+                <%= f.submit %>
+        </div>
+
+<% end %>

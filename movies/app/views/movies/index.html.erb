@@ -1,24 +1,30 @@
-<%= form_tag "/", :method => :get do %>
-	<%= text_field_tag :q, params[:q] %>
-	<%= submit_tag "Find Me Movie" %>
-<% end %>
+<div class='container'>
+	<div class='span6 offset5' style="float: right">
+		<%= form_tag "/", :method => :get do %>
+		<%= text_field_tag :q, params[:q] %>
+		<%= submit_tag "Find Me Movie" %>
+		<% end %>
+	</div>
 
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Year Released</th>
-		</tr>
-	</thead>
+	<div class='span12'>
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Year Released</th>
+				</tr>
+			</thead>
 
-	<tbody>
-	<% @movies.each do |movie| %>
-	    <tr>
-			<td><a href="<%= movie_path(movie) %>"><%= movie.title %></a></td>
-			<td><%= movie.description %></td>
-			<td><%= movie.year_released %></td>
-		</tr>
-	<% end %>
-	</tbody>
-</table>
+			<tbody>
+			<% @movies.each do |movie| %>
+			    <tr>
+					<td><a href="<%= movie_path(movie) %>"><%= movie.title %></a></td>
+					<td><%= movie.description %></td>
+					<td><%= movie.year_released %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

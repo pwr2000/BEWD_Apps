@@ -1,0 +1,9 @@
+<h1><%= @classified.title %></h1>
+<br>
+<h4><%= @classified.description %></h4>
+<h4><%= @classified.price %></h4>
+<h4><img src="<%= @classified.image.url %>"></h4>
+
+<p><a href="<%= edit_classified_path ( @classified ) %>">Edit Classified</a></p>
+<br>
+<%= button_to "Delete Classified", classified_path(@classified), :method => :delete %> 

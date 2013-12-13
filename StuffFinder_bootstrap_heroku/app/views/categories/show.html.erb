@@ -1,0 +1,16 @@
+<ul class="breadcrumb">
+  <li><a href="<%= classifieds_path %>">All</a> <span class="divider">/</span></li>
+  <li class="active"><%= @category.name %></li>
+</ul>
+
+<h1><%= @category.name %></h1>
+
+<br/>
+
+<section class="well">
+  <ul class="unstyled">
+    <% @category.classifieds.each do |classified| %>
+      <li><a href="<%= classified_path(classified) %>"><%= truncate classified.title %> - <%= number_to_currency classified.price %></a></li>
+    <% end %>
+  </ul>
+</section>

@@ -14,29 +14,46 @@
 
 <body>
 <div class="container">
+  <div class="navbar">
+	 <div class="navbar-inner">
 
-	<div class="navbar">
-	<div class="navbar-inner">
-	<a class="brand" href="<%= root_path %>">Home</a>
-	<ul class="nav">
-	        <li 
-                <% if params[:controller] == "movies" and params[:action] == "about" %> 
-                class="active"
-                <% end %>
-	        >
-                <a href="<%= root_path %>">Movie Selection</a>
-	        </li>
-	        <li
-                <% if params[:controller] == "movies" and params[:action] == "how_it_works" %> 
-                class="active"
-                <% end %>
-	        >
-                <a href="<%= new_movie_path %>">Add New Movie</a>
-	        </li>
+   <div class="span12">
+    <div class="row">
+     <div class="span4 offset0" style="float: right">
+      <div class="navbar-text">
+       <% if user_signed_in? %>
+       Hi, <%= current_user.email %> | 
+       <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+       <% else %>
+       <a href="<%= new_user_session_path %>">Log In</a> | <a href="<%= new_user_registration_path %>">Sign Up</a>
+       <% end %>
+      </div>
+     </div>
+    </div>
+
+	   <a class="brand" href="<%= root_path %>">Home</a>
+	     <ul class="nav">
+	      <li 
+          <% if params[:controller] == "movies" and params[:action] == "about" %> 
+          class="active"
+          <% end %>
+	      >
+          <a href="<%= root_path %>">Movie Selection</a>
+	      </li>
+	      
+        <li
+          <% if params[:controller] == "movies" and params[:action] == "Add New Movie" %> 
+            class="active"
+          <% end %>
+	      >
+          <a href="<%= new_movie_path %>">Add New Movie</a>
+	      </li>
+
 	</ul>
 	</div>                
 </div>
 
+<%= bootstrap_flash %>
 
 <%= yield %>
 

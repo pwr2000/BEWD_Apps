@@ -1,0 +1,25 @@
+<ul class="breadcrumb">
+  <li><a href="<%= classifieds_path %>">All</a> <span class="divider">/</span></li>
+  <li><a href="<%= category_path(@classified.category) %>"><%= @classified.category.name %></a></li>
+</ul>
+
+<h1><%= @classified.title %> - <%= number_to_currency @classified.price %></h1>
+<br/>
+<%= mail_to @classified.user.email, "Contact Seller", subject: "StuffFinder - #{@classified.title}", class: "btn btn-primary" %></h4>
+<h4>Seller: <%= @classified.user.email %></h4>
+
+<h4>Description:</h4>
+<section class="well well-small">
+  <div>
+    <p class="lead"><%= @classified.description %></p>
+  </div>
+</section>
+
+<% if @classified.image.present? %>
+<h4>Image:</h4>
+<div>
+  <img src="<%= @classified.image.url %>"/>
+</div>
+<br>
+<% end %>
+
